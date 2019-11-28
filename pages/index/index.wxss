@@ -1,0 +1,19 @@
+/**index.wxss**/
+page{
+  background-color: #fff;
+}
+.btnbox{
+  width: 50%;
+  margin:40% auto;
+}
+.btnbox view{
+  width: 100%;
+  height: 100rpx;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  background-color: #53cfb5;
+  border-radius: 20rpx;
+  margin-bottom: 50rpx;
+}

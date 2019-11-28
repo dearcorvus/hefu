@@ -1,0 +1,27 @@
+<!--pages/hotel/index.wxml-->
+<view class="nav_box">
+  <view class="{{nav==1?'check':''}}" bindtap="navFunction" data-id="1">全部</view>
+  <view class="{{nav==2?'check':''}}" bindtap="navFunction" data-id="2">进库</view>
+  <view class="{{nav==3?'check':''}}" bindtap="navFunction" data-id="3">出租</view>
+  <!-- <view class="{{nav==4?'check':''}}" bindtap="navFunction" data-id="4">维护</view> -->
+  <navigator url="../goodslist/goodslist">
+    <image src="../../static/images/l.png"></image>
+  </navigator>
+</view>
+
+<view class="order_box">
+  <view class="order_child" wx:for='{{order_item}}' wx:key=''>
+    <view class="order_info">
+      <text>{{item.goods}}</text>
+      <view class="order_time">{{item.addtime}}</view>
+      <view wx:if='{{item.status == 6 ? false : true }}'>
+        <!-- <view class="order_day">17分45秒</view>  -->
+        <view class="price">{{item.price}}元</view>    
+      </view>
+    </view>
+    <view class='order_static'  >{{item.type == 1 ? '入库' : '出租'}}</view>
+  </view>
+</view>
+
+<import src="../components/htabbar/htabbar.wxml"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>

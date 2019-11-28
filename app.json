@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/lead/index",
+    "pages/logs/logs",
+    "pages/components/tabbar/tabbar",
+    "pages/user/user",
+    "pages/hotel/index",
+    "pages/components/htabbar/htabbar",
+    "pages/goods/goods",
+    "pages/goodslist/goodslist",
+    "pages/info/info",
+    "pages/components/form-page/form-page",
+    "pages/components/form/form",
+    "pages/dweb/dweb"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "共享和服",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

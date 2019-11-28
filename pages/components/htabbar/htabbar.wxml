@@ -1,0 +1,14 @@
+<!--pages/components/htabbar/htabbar.wxml-->
+<template name="tabBar">
+<view class="tabBar">
+  <block wx:for="{{tabBar}}" wx:for-item="item" wx:key="tabBar">
+    <view class="tabBar-item">
+      <navigator open-type="navigate" url="{{item.current == 3 ? item.pagePath : ''}}" wx:if='{{item.pagePath}}' hover-class="none" >
+        <view class="{{item.current== 1 ? 'tabBartext' :''}}">{{item.text}}</view>
+      </navigator>  
+      <view  bindtap="Saom"><image class="icon" mode="widthFix" src='{{item.iconPath}}' wx:if='{{item.iconPath}}'></image></view>
+    </view>
+  </block>
+</view>
+</template>
+

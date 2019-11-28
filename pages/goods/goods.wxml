@@ -1,0 +1,60 @@
+<!--pages/goods/goods.wxml-->
+<!-- banner -->
+<view class="page-section page-section-spacing swiper" >
+  <swiper indicator-dots="{{indicatorDots}}"  style="width:{{imagewidth}}px;height:{{imageheight}}px;" 
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
+    <block wx:for="{{imgUrls}}" wx:key="*this">
+      <swiper-item>
+        <image class="swiper-item" style="width:{{imagewidth}}px;height:{{imageheight}}px;" mode="widthFix" src="{{item}}" bindload="imageLoad"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 信息 -->
+<view class="goodsbox">
+  <view class="goods_title">{{goods.name}}</view>
+  <view class="goods_stitle">
+    <text>{{goods.grade_name}}</text>
+    <text>租用次数:{{goods.num}}</text>
+  </view>
+</view>
+
+<!-- 详细推荐 -->
+<view class="info">
+  <text>亮点推荐</text>
+  <!-- rich-text.wxml -->
+<rich-text nodes="{{nodes}}"></rich-text>
+
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        回收方式：{{array[index]}}
+      </view>
+    </picker>
+    <picker bindchange="bindTypeChange" value="{{type}}" range="{{arr}}">
+      <view class="picker">
+        和服情况：{{arr[type]}}
+      </view>
+    </picker>  
+</view>
+
+
+
+
+  <view class="pinFooter">
+  <navigator class="gohome" open-type="reLaunch" url="/pages/index/index">
+    <image src="/static/images/ghome.png"></image>
+    <view>首页</view>
+  </navigator>
+  <view class="collect" bindtap='collection' id='{{courseId}}'>
+    <image src="/static/images/kf.jpg" class="hide"></image>
+    <view>客服</view>
+  </view> 
+  <view class='{{status == 1 ? "justPin" : "justPins" }}' bindtap='{{status == 1 ? "subtimeFunction" : "" }}'  data-id="{{goodsid}}" >{{status == 1 ? "立即入库" : " 已入库" }}</view>
+</view>
+
+
+
+
+
+
